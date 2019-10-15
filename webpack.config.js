@@ -1,8 +1,12 @@
 module.exports = {
+  mode: 'development',
+  devServer: {
+    hot: true,
+  },
   entry: './src/index.tsx',
   resolve: {
     // Add `.ts` and `.tsx` as a resolvable extension.
-    extensions: ['.ts', '.tsx'],
+    extensions: ['.ts', '.tsx', '.js'],
   },
   module: {
     rules: [

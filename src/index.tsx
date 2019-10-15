@@ -1,8 +1,13 @@
-import * as React from "react";
-import { render } from "react-dom";
+import * as React from 'react'
+import { render } from 'react-dom'
 
-const HelloWorld = () => {
-    return <div>Hello World</div>
+const appRoot = () => {
+  const HelloWorld = require('./HelloWorld').HelloWorld
+  render(<HelloWorld />, document.getElementById('app'))
 }
 
-render(<HelloWorld/>, document.getElementById("app"));
+appRoot()
+
+if (module.hot) {
+  module.hot.accept('./HelloWorld', appRoot)
+}
